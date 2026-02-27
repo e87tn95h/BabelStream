@@ -21,7 +21,7 @@
 
 macro(wipe_gcc_style_optimisation_flags VAR)
     if(${VAR})
-        string(REGEX REPLACE "([\\/\\-]O.)" "" ${VAR} ${${VAR}})
+        string(REGEX REPLACE "([\\/\\-]O[^ ]*)" "" ${VAR} ${${VAR}})
     endif()
 endmacro()
 
