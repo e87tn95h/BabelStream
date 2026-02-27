@@ -1,3 +1,11 @@
+> This project is a fork of [UoB-HPC/BabelStream](https://github.com/UoB-HPC/BabelStream) and this section contains information specific to the fork. The original README is below.
+
+[日本語 (Japanese)](README_ja.md)
+
+---
+
+The original README follows.
+
 # BabelStream
 
 <img src="babelstream.png?raw=true" alt="logo" height="300" align="right" />
