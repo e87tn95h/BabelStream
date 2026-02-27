@@ -29,6 +29,8 @@ REM - 生成されたプログラム (実行可能ファイル) の実行
 cmake-build-sycl2020-usm\sycl2020-usm-stream.exe --float --arraysize 134217728
 ```
 
+`ONEAPI_DEVICE_SELECTOR` 環境変数: デフォルトの SYCL デバイスを指定する拡張機能
+
 ```cmd
 REM - 実行時のデバイス指定: CPU
 set ONEAPI_DEVICE_SELECTOR=opencl:cpu
@@ -59,6 +61,8 @@ cmake --build cmake-build-sycl2020-usm
 cmake-build-sycl2020-usm/sycl2020-usm-stream --float --arraysize 134217728
 ```
 
+`ONEAPI_DEVICE_SELECTOR` 環境変数: デフォルトの SYCL デバイスを指定する拡張機能
+
 ```bash
 # 実行時のデバイス指定: CPU
 export ONEAPI_DEVICE_SELECTOR=opencl:cpu
@@ -87,13 +91,13 @@ set DPCPP_CPU_NUM_CUS=2
 REM - Microsoft Visual Studio の GUI デバッガーを呼び出す
 devenv /debugexe cmake-build-sycl2020-usm\sycl2020-usm-stream.exe --float --arraysize 131072
 
-REM - [デバッグ(D)] > [ステップ イン(L)] を実行すると
+REM - [デバッグ(D)] → [ステップ イン(L)] を実行すると
 REM - プログラムの実行を開始し、main() の先頭でブレーク (一時停止) できる
 
-REM - [ファイル(F)] > [開く(O)] > [ファイル(F)...] から
+REM - [ファイル(F)] → [開く(O)] → [ファイル(F)...] から
 REM - 関連するソースファイルを開くことができる
 
-REM - [デバッグ(F)] > [ウィンドウ(W)] > [イミディエイト(I)] で
+REM - [デバッグ(F)] → [ウィンドウ(W)] → [イミディエイト(I)] で
 REM - "イミディエイト ウィンドウ" を開くことができる
 REM - ブレークした時点における、変数の値表示や式の評価の確認に利用できる
 ```
