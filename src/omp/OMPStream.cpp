@@ -22,9 +22,9 @@ OMPStream<T>::OMPStream(BenchId bs, const intptr_t array_size, const int device,
   : array_size(array_size)
 {
   // Allocate on the host
-  this->a = (T*)aligned_alloc(ALIGNMENT, sizeof(T)*array_size);
-  this->b = (T*)aligned_alloc(ALIGNMENT, sizeof(T)*array_size);
-  this->c = (T*)aligned_alloc(ALIGNMENT, sizeof(T)*array_size);
+  this->a = (T*)omp_aligned_alloc(ALIGNMENT, sizeof(T)*array_size);
+  this->b = (T*)omp_aligned_alloc(ALIGNMENT, sizeof(T)*array_size);
+  this->c = (T*)omp_aligned_alloc(ALIGNMENT, sizeof(T)*array_size);
 
 #ifdef OMP_TARGET_GPU
   omp_set_default_device(device);
@@ -53,9 +53,9 @@ OMPStream<T>::~OMPStream()
   #pragma omp target exit data map(release: a[0:array_size], b[0:array_size], c[0:array_size])
   {}
 #endif
-  free(a);
-  free(b);
-  free(c);
+  omp_free(a);
+  omp_free(b);
+  omp_free(c);
 }
 
 template <class T>
